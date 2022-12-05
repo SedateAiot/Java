@@ -2,13 +2,9 @@
 
 ### 使用Git将本地的内容上传到Github
 
-
-
 ```python
 git add --all
-
 git commit -m "add some files notes"
-
 git push -u origin master
 ```
 
@@ -18,3 +14,10 @@ git push -u origin master
 
 2. 将设置中的github账户添加好
 3. 管理项目文件
+
+### 配置海龟Git
+
+1. 设置中文
+
+2. 设置Rsb
+3. 设置账号

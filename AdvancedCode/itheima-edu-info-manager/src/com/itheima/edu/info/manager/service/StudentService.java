@@ -15,13 +15,14 @@ public class StudentService {
 
     public boolean isExists(String id) {
         // 1.调用Dao中的findAllStudent方法，来将数组中所有的内容进行返回
-
         Student[] students = studentDao.findAllStudent();
         // 2.从返回的数组在寻找有没有id相同的
-        boolean exists = false;
+        boolean exists = false;  // 定义初始变量
+        // 循环取数组里的值
         for (int i = 0; i < students.length; i++) {
             Student student = students[i];
             if (student != null && student.getId().equals(id)) {
+                // 如果数组中的某个值不为null且等于输入进来的id
                 exists = true;
                 break;
             }

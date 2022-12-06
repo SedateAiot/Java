@@ -8,7 +8,6 @@ public class StudentDao {
     // 1. 创建学生对象数组
     private static Student[] students = new Student[5];
     public boolean addStudent(Student stu) {
-
         // 2. 定义变量index为-1 假设数组已经全部存满，没有null元素
         int index = -1;
         // 3. 遍历数组取出每一个元素，判断是否为null
@@ -28,8 +27,6 @@ public class StudentDao {
             // 5. 返回是否添加成功的布尔值
           return true;
         }
-
-
     }
 
     public Student[] findAllStudent() {

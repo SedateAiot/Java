@@ -50,4 +50,24 @@ public class StudentDao {
         }
         return Index;
     }
+
+    public boolean resetStudent(String id, Student stu) {
+        // 找到用户输入的ID的索引值
+        int index = -1;
+        for (int i = 0; i < students.length; i++) {
+            Student student = students[i];
+            if (student!=null &&  student.getId().equals(id)){
+                index = i;
+                break;
+            }
+        }
+        if (index==-1){
+            return false;
+        }else {
+            stu.setId(id);
+            students[index] = stu;
+            return true;
+        }
+
+    }
 }

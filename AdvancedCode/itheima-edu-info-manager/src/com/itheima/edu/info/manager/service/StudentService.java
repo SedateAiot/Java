@@ -52,4 +52,8 @@ public class StudentService {
             return null;
         }
     }
+
+    public boolean resetStudent(String id, Student stu) {
+        return studentDao.resetStudent(id, stu);
+    }
 }

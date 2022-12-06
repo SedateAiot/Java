@@ -2,10 +2,11 @@ package com.itheima.edu.info.manager.dao;
 
 import com.itheima.edu.info.manager.domain.Student;
 import com.itheima.edu.info.manager.service.StudentService;
+import com.sun.source.tree.ReturnTree;
 
 public class StudentDao {
     // 1. 创建学生对象数组
-    private Student[] students = new Student[5];
+    private static Student[] students = new Student[5];
     public boolean addStudent(Student stu) {
 
         // 2. 定义变量index为-1 假设数组已经全部存满，没有null元素
@@ -33,5 +34,23 @@ public class StudentDao {
 
     public Student[] findAllStudent() {
         return students;
+    }
+
+    public void deleteStudentById(String delId) {
+        // 删除逻辑
+        int Index = getIndexId(delId);
+
+        students[Index] = null;
+    }
+    public int getIndexId(String id){
+        int Index = -1;
+        for (int i = 0; i < students.length; i++) {
+            Student student = students[i];
+            if(student!=null && student.getId().equals(id)){
+                Index = i;
+                break;
+            }
+        }
+        return Index;
     }
 }
